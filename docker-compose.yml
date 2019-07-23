@@ -29,6 +29,7 @@ services:
       - "5044:5044"
       - "514:5140/udp"
       - "9527:9527"
+      - "9996:9996/udp"
     environment:
       LS_JAVA_OPTS: "-Xmx1g -Xms1g"
     networks:
