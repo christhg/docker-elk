@@ -1,0 +1,22 @@
+#=========================== Filebeat inputs ==============
+filebeat.inputs:
+
+- type: log
+  enabled: true
+  paths:
+    - /root/docker-nginx/log/*.log
+  tags: ["elk_nginx"]
+#============================== Dashboards ===============
+setup.dashboards.enabled: false
+
+#============================== Kibana ==================
+setup.kibana:
+        host: "192.168.201.63:5601"
+
+#-------------------------- Elasticsearch output ---------
+#output.elasticsearch:
+#       hosts: ["localhost:9200"]
+
+#--------------------------- Logstash output -------------
+output.logstash:
+      hosts: ["127.0.0.1:5044"]
