@@ -10,3 +10,9 @@ Based on the official Docker images from Elastic:
 * [elasticsearch](https://github.com/elastic/elasticsearch-docker)
 * [logstash](https://github.com/elastic/logstash-docker)
 * [kibana](https://github.com/elastic/kibana-docker)
+
+## plugins install
+1. into es container 
+bin/elasticsearch-plugin install x-pack
+2. or vi Dockerfile 
+RUN elasticsearch-plugin install x-pack
