@@ -13,6 +13,6 @@ Based on the official Docker images from Elastic:
 
 ## plugins install
 1. into es container 
-bin/elasticsearch-plugin install x-pack
++ bin/elasticsearch-plugin install x-pack
 2. or vi Dockerfile 
-RUN elasticsearch-plugin install x-pack
++ RUN elasticsearch-plugin install x-pack
