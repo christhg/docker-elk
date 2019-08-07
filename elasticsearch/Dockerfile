@@ -7,4 +7,4 @@ FROM docker.elastic.co/elasticsearch/elasticsearch-oss:${ELK_VERSION}
 # Example: RUN elasticsearch-plugin install analysis-icu
 
 # 監控elasticsearch狀態
-RUN elasticsearch-plugin install x-pack
+#RUN elasticsearch-plugin install x-pack
