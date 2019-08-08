@@ -17,6 +17,9 @@ Based on the official Docker images from Elastic:
 2. or vi Dockerfile 
 + RUN elasticsearch-plugin install x-pack
 
-## kibana dashboard/visualize import/export
+## kibana dashboard/visualize import/export 匯入/匯出
 + ./kibana/export/kibana_config_export.sh
 + ./kibana/export/kibana_config_import.sh
+
+## 環境變量 .env
++ ELK_VERSION=6.4.0
