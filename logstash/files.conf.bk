@@ -1,0 +1,37 @@
+input {
+  file {
+    #type => "stock"
+    #path => "/root/docker-elk-cluster/logs/1080808.csv"
+    #start_position => "beginning"
+    #sincedb_path => "/dev/null"
+  }
+}
+filter {
+  csv {
+     separator => ","
+     #columns => ["code","name","close","up_down","open","high","low","volume","price","count","last_buy","last_sell"]
+     columns => ["Date","Open","High","Low","Close","Adj Close","Volume"]
+     #add_field => {
+     #     "log_date" => "08/08/2019:00:00:00"
+     #}
+  }
+  mutate {convert => ["Open", "float"]}
+  mutate {convert => ["High, "float"]}
+  mutate {convert => ["Low", "float"]}
+  mutate {convert => ["Close", "float"]}
+  #date {
+  #        match => ["Date","yyyy-MMM-dd"]  #[dd/MMM/yyyy:HH:mm:ss Z"]
+  #        target => "@timestamp"
+  #}
+}
+output {
+        if [type] == "stock" {
+           stdout {
+              codec => rubydebug
+           }
+           elasticsearch {
+                index => "stock-%{+YYYY.MM.dd}"
+                hosts => ["elasticsearch:9200"]
+           }
+        }
+}

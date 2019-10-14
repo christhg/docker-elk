@@ -10,7 +10,7 @@ Based on the official Docker images from Elastic:
 * [elasticsearch](https://github.com/elastic/elasticsearch-docker)
 * [logstash](https://github.com/elastic/logstash-docker)
 * [kibana](https://github.com/elastic/kibana-docker)
-
+## 使用OSS開源版本
 ## plugins install
 1. into es container 
 + bin/elasticsearch-plugin install x-pack
@@ -23,3 +23,5 @@ Based on the official Docker images from Elastic:
 
 ## 環境變量 .env
 + ELK_VERSION=6.4.0
+
+## Elasticsearch 單機模式

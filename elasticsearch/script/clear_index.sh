@@ -8,11 +8,11 @@ time=`date`
 #
 curl -XGET "http://127.0.0.1:9200/_cat/indices/?v" | grep $DATA1
 if [ $? == 0 ];then
-   curl -XDELETE "http://127.0.0.1:9200/*-${DATA1}"
+   curl -XDELETE "http://127.0.0.1:9200/logstash_netflow-${DATA1}"
    echo "已在$time清理$DATA1索引"
 fi
 curl -XGET "http://127.0.0.1:9200/_cat/indices/?v" | grep $DATA2
 if [ $? == 0 ];then
-   curl -XDELETE "http://127.0.0.1:9200/*-${DATA2}"
+   curl -XDELETE "http://127.0.0.1:9200/logstash_netflow-${DATA2}"
    echo "已在$time清理$DATA2索引"
 fi
